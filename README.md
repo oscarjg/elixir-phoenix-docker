@@ -1,4 +1,4 @@
-### Elixir Phoenix Docker
+# Elixir Phoenix & Docker
 This project helps you to start a new phoenix project with Docker
 ecosystem. Following the next steps your project should be created
 and will be ready to start coding
@@ -23,7 +23,7 @@ docker-compose build
 docker-compose up
 ```
 
-###### Run any command inside phoenix app with run.sh script
+###### Run any command inside phoenix app with run.sh helper script
 ```
 #For instance:
 sh run.sh mix ecto.create
