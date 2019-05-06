@@ -17,6 +17,26 @@ docker-compose run --rm phoenix mix phx.new . --app your_app_name
 The directory /app already exists. Are you sure you want to continue? [Yn] Y
 ```
 
+###### Setting your config
+Database configuration is setting via environment variables inside 
+docker-compose.yml. Replace PG_DATABASE with your database name.
+```
+PG_DATABASE: your_project_database_name
+```
+
+Update your config.dev file. Keep in mind the your_app_name placeholders.
+```
+# Configure your database
+config :your_app_name, YourApp.Repo,
+  username: System.get_env("PG_USER"),
+  password: System.get_env("PG_PASSWORD"),
+  database: System.get_env("PG_DATABASE"),
+  hostname: System.get_env("PG_HOST"),
+  port: System.get_env("PG_PORT"),
+  show_sensitive_data_on_connection_error: true,
+  pool_size: 10
+```
+
 ###### Build and run docker as usual
 ```
 docker-compose build
