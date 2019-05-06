@@ -6,7 +6,7 @@ services:
     environment:
       PG_USER: postgres
       PG_PASSWORD: postgres
-      PG_DATABASE: your_project_database_name
+      PG_DATABASE: rumbl
       PG_PORT: 5432
       PG_HOST: db
     volumes:
