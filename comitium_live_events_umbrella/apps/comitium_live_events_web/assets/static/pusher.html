@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <button onclick="create()">Create</button>
+    <button onclick="update()">update</button>
+    <button onclick="remove()">Delete</button>
+
+    <script src="http://localhost:4000/js/pusher.js"></script>
+    <script>
+        function create(){
+            LiveEventPusher.create("foo-api-key", {id: 1234, action:"create"});
+        };
+
+        function update(){
+            LiveEventPusher.update("foo-api-key", {id: 1234, action:"update"});
+        };
+
+        function remove(){
+            LiveEventPusher.delete("foo-api-key", {id: 1234, action:"delete"});
+        };
+    </script>
+</body>
+</html>
