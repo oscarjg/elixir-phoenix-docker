@@ -6,7 +6,7 @@ services:
     environment:
       PG_USER: postgres
       PG_PASSWORD: postgres
-      PG_DATABASE: rumbl
+      PG_DATABASE: comitium_live_events
       PG_PORT: 5432
       PG_HOST: db
     volumes:

@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 
-cd /app
+cd /app/comitium_live_events_umbrella
+
+mix deps.get
 
 # Wait until Postgres is ready
 while ! pg_isready -q -h $PG_HOST -p $PG_PORT -U $PG_USER

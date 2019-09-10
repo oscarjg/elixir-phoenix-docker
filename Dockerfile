@@ -3,7 +3,7 @@ MAINTAINER Oscar Jimenez <oscarjg19.developer@gmail.com>
 
 RUN mix local.hex --force \
  && mix local.rebar --force \
- && mix archive.install hex phx_new 1.4.4 --force \
+ && mix archive.install hex phx_new 1.4.9 --force \
  && apt-get update \
  && curl -sL https://deb.nodesource.com/setup_11.x | bash \
  && apt-get install -y apt-utils \
