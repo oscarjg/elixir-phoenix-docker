@@ -4,15 +4,15 @@ services:
   phoenix:
     build: .
     environment:
-      PG_USER: postgres
-      PG_PASSWORD: postgres
-      PG_DATABASE: comitium_live_events
-      PG_PORT: 5432
-      PG_HOST: db
+      PG_USER: ${PG_USER}
+      PG_PASSWORD: ${PG_PASSWORD}
+      PG_DATABASE: ${PG_DATABASE}
+      PG_PORT: ${PG_PORT}
+      PG_HOST: ${PG_HOST}
     volumes:
       - ./app:/app
     ports:
-      - "4000:4000"
+      - ${APP_PORT}:4000
     depends_on:
       - db
     command:
@@ -20,14 +20,16 @@ services:
     working_dir: /app
 
   db:
-    image: "postgres:9.6.3"
+    image: "postgres:12"
     environment:
       # Set user/password for Postgres
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgres
+      POSTGRES_USER: ${PG_USER}
+      POSTGRES_PASSWORD: ${PG_PASSWORD}
       # Set a path where Postgres should store the data
-      PGDATA: /var/lib/postgresql/data/pgdata
+      PGDATA: ${PG_DATA}
     restart: always
+    ports:
+      - ${DB_PORT}:5432
     volumes:
       - pgdata:/var/lib/postgresql/data
 

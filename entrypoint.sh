@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-cd /app/comitium_live_events_umbrella
+cd ./app
 
 mix deps.get
 
